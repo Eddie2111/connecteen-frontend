@@ -1,0 +1,14 @@
+.card{
+    width:250px;
+    height:250px;
+    background-color: rgb(62, 186, 244);
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+.card:hover{
+    background-color: rgb(54, 57, 59);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 10px rgb(62, 186, 244);
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
