@@ -5,7 +5,7 @@ This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](
 ## Will be deployed on vercel + heroku
 
 - Node deployed on Heroku
-![https://server42223.herokuapp.com/]
+ → https://server42223.herokuapp.com
 
 
 
