@@ -6,6 +6,8 @@ This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](
 
 - Node deployed on Heroku
  → https://server42223.herokuapp.com
+- SSR on development on Vercel
+ → https:// .vercel.app
 
 
 
