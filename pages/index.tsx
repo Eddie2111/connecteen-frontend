@@ -2,24 +2,42 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Banner from './components/Banner'
-
 import Navbar2 from './components/Navbar2'
 
-const Home: NextPage = () => {
-  const fontStyleBanner = {
-    color: "white",
-  };
+import { useRouter } from 'next/router'
+//import Link from 'next/link'
+import { format } from 'url'
+
+let counter = 0
+export async function getServerSideProps() {
+  counter++
+  return { props: { initialPropsCounter: counter } }
+}
+export default function Home({ initialPropsCounter }) {
+  const router = useRouter()
+  const { pathname, query } = router
+  const reload = () => {
+    router.push(format({ pathname, query }))
+  }
+
+  const incrementCounter = () => {
+    const currentCounter = query.counter ? parseInt(query.counter) : 0
+    const href = `/?counter=${currentCounter + 1}`
+
+    router.push(href, href, { shallow: true })
+  }
   return (
     <>
+    
     <Banner />
     <Navbar2 />
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Connecteen | Welcome</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
+      <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
@@ -29,13 +47,13 @@ const Home: NextPage = () => {
 
         <p className="mt-3 text-2xl">
           
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
+          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
             Get started by joining the most advanced community of Banlgadesh
           </code>
         </p>
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a href="https://nextjs.org/docs"className="card mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600">
+        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
+          <a href="https://nextjs.org/docs"className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
             <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
             <p className="mt-4 text-xl">
               Find in-depth information about Next.js features and its API.
@@ -44,7 +62,7 @@ const Home: NextPage = () => {
 
           <a
             href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Learn &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -54,7 +72,7 @@ const Home: NextPage = () => {
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Examples &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -64,7 +82,7 @@ const Home: NextPage = () => {
 
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
             <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
             <p className="mt-4 text-xl">
@@ -80,4 +98,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default (Home);
+

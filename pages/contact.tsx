@@ -4,7 +4,29 @@ import Image from 'next/image'
 import Banner from './components/Banner'
 import Navbar2 from './components/Navbar2'
 
-const Home: NextPage = () => {
+
+import { useRouter } from 'next/router'
+//import Link from 'next/link'
+import { format } from 'url'
+
+let counter = 0
+export async function getServerSideProps() {
+  counter++
+  return { props: { initialPropsCounter: counter } }
+}
+export default function Contact({ initialPropsCounter }) {
+  const router = useRouter()
+  const { pathname, query } = router
+  const reload = () => {
+    router.push(format({ pathname, query }))
+  }
+
+  const incrementCounter = () => {
+    const currentCounter = query.counter ? parseInt(query.counter) : 0
+    const href = `/?counter=${currentCounter + 1}`
+
+    router.push(href, href, { shallow: true })
+  }
   return (
     <>
     <Banner />
@@ -76,4 +98,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default (Home);
+

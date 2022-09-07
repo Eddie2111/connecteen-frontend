@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Banner from './components/Banner'
 import Navbar2 from './components/Navbar2'
 
-const Home: NextPage = () => {
+const Community: NextPage = () => {
   return (
     <>
     <Banner />
@@ -75,4 +75,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default (Home);
+export default (Community);
