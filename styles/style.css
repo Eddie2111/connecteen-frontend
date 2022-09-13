@@ -1,18 +1,24 @@
+.body{
+    background: rgb(232,234,235);
+    background: radial-gradient(circle, rgba(232,234,235,1) 0%, rgba(161,213,255,1) 72%, rgba(255,255,255,1) 100%);
+}
 .card{
-    width:250px;
-    height:250px;
-    background-color: rgb(62, 186, 244);
+    background: rgb(28,28,28);
+    background: linear-gradient(90deg, rgba(28,28,28,1) 7%, rgb(77, 77, 77) 25%, rgb(71, 71, 71) 72%, rgba(15,15,15,1) 91%);
     box-shadow: 0 0 10px 10px rgb(113, 113, 113);
     border-radius: 10px;
-    transition: 0.5s ease-in-out;
+    color:aliceblue;
+    transition: 0.5s ease-in-out !important;
 }
+
 .card:hover{
-    background-color: rgb(246, 161, 57);
+    background: rgb(82,182,217);
+    background: linear-gradient(90deg, rgba(82,182,217,1) 7%, rgba(240,243,244,1) 25%, rgba(255,255,255,1) 72%, rgba(68,168,207,1) 91%);
     border-radius: 10px;
     color:rgb(0, 0, 0);
-    box-shadow: 0 0 10px 10px rgb(255, 178, 96);
-    /*transform: scale(1.1);*/
-    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 10px 10px  rgb(68, 204, 253);
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out !important;
 }
 .cardLogin{
     width:350px;
@@ -27,9 +33,10 @@
 }
 .cardSignup{
     width:350px;
-    height:450px;
+    height:550px;
     margin:auto;
     padding:auto;
+    margin-top:10px;
     margin-bottom: 30px;
     background-color: rgb(244, 247, 248);
     box-shadow: 0 0 10px 10px rgb(219, 219, 219);
