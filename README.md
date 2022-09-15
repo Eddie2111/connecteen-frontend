@@ -16,6 +16,7 @@ This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](
 - Tailwind CSS
 - NodeJS backend
 - End to end validation
+- Loading animation
 
 # Stuff to be applied
 - Contact through provided Server Side API
