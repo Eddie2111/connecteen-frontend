@@ -174,29 +174,29 @@ const Courses = () => {
         
         
       
-        {/* 👇️ iterate object VALUES */}
-        {Object.values(courses).map((value, index) => {
-          return (
-            <a className="p-6 mt-6 text-left border Course w-96 rounded-xl hover:text-blue-600 focus:text-blue-600" key={index}>
-                    <Card sx={{ maxWidth: 345 }}>
-                      <CardMedia component="img" height="140" image="" alt="green iguana"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                          {value.name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          {value.title}
-                        </Typography>
-                      </CardContent>
-                      <CardActions>
-                        <Button size="small">Learn More</Button>
-                      </CardActions>
-                    </Card>
-            </a>
-          )
-        })}
-        </div>
+    {/* 👇️ iterate object VALUES */}
+    {Object.values(courses).map((value, index) => {
+      return (
+        <a className="p-6 mt-6 text-left border Course w-96 rounded-xl hover:text-blue-600 focus:text-blue-600" key={index}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia component="img" height="140" image="" alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {value.name}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {value.title}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </a>
+      )
+    })}
+    </div>
       </main>
 
     </div>

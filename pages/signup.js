@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Head from 'next/head'
-//import Navbar2 from './components/Navbar2'
 import  Router  from 'next/router'
+import backend from './api/backend'
+import Navbar2 from './components/Navbar2'
 
 const Signup = () => {
 
@@ -13,29 +14,29 @@ const Signup = () => {
       password: event.target.password.value,
     };
     //const res = await fetch("https://server42223.herokuapp.com/");
-    const back = await fetch('http://localhost:3200/signup', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              })
-              .then(res => res.json())
-              .then((data) => {
-                const email = data.value.email
-                const bool = true;
-                localStorage.setItem('email', email)
-                localStorage.setItem('isVerifyAllowed', bool)
-                Router.push('/verify')
-              })
-              .catch(err => console.log(err))
+    const back = await fetch(backend+'signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then((data) => {
+      const email = data.value.email
+      const bool = true;
+      localStorage.setItem('email', email)
+      localStorage.setItem('isVerifyAllowed', bool)
+      Router.push('/verify')
+    })
+    .catch(err => console.log(err))
 
   }
   
 
   return (
     <>
-    
+    <Navbar2/>
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Connecteen | Signup </title>

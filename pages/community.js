@@ -9,7 +9,7 @@ const Community = () => {
     
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>C-N-A | Community</title>
+        <title>Connecteen | Community</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

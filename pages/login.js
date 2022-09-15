@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navbar2 from './components/Navbar2'
 import Link from 'next/link'
-
+import backend from './api/backend'
 const Login = () => {
 
   const onSubmit = async (event) => {
@@ -10,16 +10,16 @@ const Login = () => {
       email: event.target.email.value,
       password: event.target.password.value,
     };
-    const back = await fetch('http://localhost:3200/signup', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              })
-              .then(res => res.json())
-              .then(data => console.log(data))
-              .catch(err => console.log(err))
+    const back = await fetch(backend+'signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
 
   }
   return (

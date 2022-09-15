@@ -23,7 +23,7 @@ export default function Contact({ }) {
     <Navbar2/>
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>C-N-A | Contact</title>
+        <title>Connecteen | Contact</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

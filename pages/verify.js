@@ -3,12 +3,12 @@ import Navbar2 from './components/Navbar2'
 import Link from 'next/link'
 import { Button } from '@mui/material'
 import  Router  from 'next/router'
-
+import backend from './api/backend'
 
 const Verify = () => {
     try{
     const sendBack = localStorage.getItem('isVerifyAllowed');
-    if (!sendBack){
+    if (sendBack){
         Router.push('/404')
         console.log("yes");
     }
@@ -28,21 +28,21 @@ catch(err){
       code: event.target.code.value,
     };
     
-    const back = await fetch('http://localhost:3200/verify', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              })
-              .then(res => res.json())
-              .then(data => console.log(data))
-              .catch(err => console.log(err))
+    const back = await fetch(backend+'verify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
 
   }
   return (
     <>
-    
+    <Navbar2 />
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Connecteen | Login</title>
@@ -80,6 +80,8 @@ catch(err){
               </Link>
               
           </form>
+
+
           <p className="text-xs text-center text-gray-500">
             &copy;2022 Connecteen. All rights reserved.
           </p>

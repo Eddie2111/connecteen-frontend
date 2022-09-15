@@ -23,10 +23,10 @@ function Banner(){
           Join the most advanced community of Bangladesh
         </div>
         <div>
-          <a style = {joinNow}
+          <p style = {joinNow}
             className="inline-block px-4 py-2 mt-4 text-sm leading-none text-white transition border border-white rounded hover:border-transparent hover:text-blue-500 hover:bg-white lg:mt-0"> 
               <Link href="/login"> Join Today </Link>
-            </a>
+            </p>
         </div>
       </div>
     </nav>

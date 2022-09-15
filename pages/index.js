@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Banner from './components/Banner'
 import Navbar2 from './components/Navbar2'
 import { useRouter } from 'next/router'
+import Banner from './components/Banner'
 //import Link from 'next/link'
 import { format } from 'url'
 
@@ -27,13 +27,15 @@ export default function Home({  }) {
     <>
     <Banner/>
     <Navbar2/>
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    
+    
       <Head>
         <title>Connecteen | Welcome</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 body">
+      <section className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Welcome to{' '}
           <a className="text-blue-600" href="https://nextjs.org">
@@ -48,6 +50,39 @@ export default function Home({  }) {
           </code>
         </p>
 
+
+      </section>
+      </div>
+
+      
+
+      
+
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 body">
+      <section className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+        <h1 className="text-6xl font-bold" >
+          Welcome to{' '}
+          <a className="text-blue-600" href="https://nextjs.org">
+            CONNECTEEN
+          </a>
+        </h1>
+
+        <p className="mt-3 text-2xl">
+          
+          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
+            Get started by joining the most advanced community of Banlgadesh
+          </code>
+        </p>
+
+
+      </section>
+    </div>
+    
+    </>
+  )
+}
+
+/*
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           <a href="https://nextjs.org/docs"className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
             <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
@@ -86,12 +121,6 @@ export default function Home({  }) {
             </p>
           </a>
         </div>
-      </main>
-
-      
-    </div>
-    </>
-  )
-}
+        */
 
 

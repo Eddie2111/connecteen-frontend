@@ -6,7 +6,11 @@ module.exports = {
   ],
   
   theme: {
-    extend: {},
+    extend: {
+      gridColumn: {
+        'span-2': 'span 2 / span 2',
+      }
+    },
   },
   plugins: [],
 }
