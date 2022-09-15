@@ -1,6 +1,6 @@
 # Connecteen [Building using Next.js + Tailwind CSS + Material UI]
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This future platform will bring in all the advanced skilled teens into a single community.
 
 ## Will be deployed on vercel + heroku
 
