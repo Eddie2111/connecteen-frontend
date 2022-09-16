@@ -10,6 +10,13 @@ This future platform will bring in all the advanced skilled teens into a single 
  → https:// https://connecteen-frontend-gm7u0vsof-eddie2111.vercel.app/
 
 
+# Pages completed
+- Home
+- Courses
+- Login
+- Signup
+- Verification
+- Under construction
 
 # Stuff applied
 - Shallow routing
