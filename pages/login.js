@@ -7,8 +7,8 @@ const Login = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const data = {
-      email: event.target.email.value,
-      password: event.target.password.value,
+      email: event.target.email.value.toString(),
+      password: event.target.password.value.toString(),
     };
     const back = await fetch(backend+'signup', {
       method: 'POST',
