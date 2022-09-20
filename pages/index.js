@@ -4,7 +4,7 @@ import { useRouter }  from 'next/router'
 import Banner         from './components/Banner'
 import { format }     from 'url'
 import Image          from 'next/image'
-
+import { motion }     from "framer-motion"
 
 let counter = 0;
 export async function getServerSideProps() {
@@ -34,7 +34,11 @@ export default function Home({  }) {
         <title>Connecteen | Welcome</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+  />
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body2 ">
       <section className='indexContainer'>
           <div className="flexbox">

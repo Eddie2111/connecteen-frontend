@@ -3,17 +3,59 @@ import Head from 'next/head'
 import  Router  from 'next/router'
 import backend from './api/backend'
 import Navbar2 from './components/Navbar2'
+import validatorSignup from './api/validator/signup'
+import { useState } from 'react'
 
 const Signup = () => {
-
+  const [error, setError] = useState({
+    name: '',
+    email: '',
+    password: '',
+    cpassword: '',
+  });
+  const [errorColor, setErrorColor] = useState("");
   const onSubmit = async (event) => {
     event.preventDefault();
+    
     const data = {
       name: event.target.name.value,
       email: event.target.email.value,
       password: event.target.password.value,
+      cpassword: event.target.cpassword.value,
     };
+    setError(validatorSignup(data));
+    
+    
+    if(Object.keys(error).length === 0){
+      const newData = {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      }
+      await fetch(backend+'signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newData),
+      })
+        .then(res => res.json())
+        .then((data) => {
+          const email = data.value.email
+          const bool = true;
+          localStorage.setItem('email', email)
+          localStorage.setItem('isVerifyAllowed', bool)
+          Router.push('/verify')
+        })
+        .catch(err => console.log(err))
+    }
+    if(Object.keys(error).length !== 0){
+      setErrorColor("border-red-500");  
+    }
+    
+    
     //const res = await fetch("https://server42223.herokuapp.com/");
+/*
     const back = await fetch(backend+'signup', {
       method: 'POST',
       headers: {
@@ -21,15 +63,16 @@ const Signup = () => {
       },
       body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then((data) => {
-      const email = data.value.email
-      const bool = true;
-      localStorage.setItem('email', email)
-      localStorage.setItem('isVerifyAllowed', bool)
-      Router.push('/verify')
-    })
-    .catch(err => console.log(err))
+      .then(res => res.json())
+      .then((data) => {
+        const email = data.value.email
+        const bool = true;
+        localStorage.setItem('email', email)
+        localStorage.setItem('isVerifyAllowed', bool)
+        Router.push('/verify')
+      })
+      .catch(err => console.log(err))
+      */
 
   }
   
@@ -63,30 +106,32 @@ const Signup = () => {
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="Name" >
                 Full Name
               </label>
-              <input className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+              <input className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
               id="username" type="text" placeholder="John Doe"  name="name" required minLength='3' maxLength="35"/>
+              <p className="text-xs italic text-red-500">{error.name}</p>
             </div>
             <div className="mb-4">
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="Email" >
                 Email
               </label>
-              <input className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+              <input className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
               id="username" type="text" placeholder="john@example.com"  name="email" required minLength='10' maxLength="40"/>
+              <p className="text-xs italic text-red-500">{error.email}</p>
             </div>
             <div className="mb-6">
 
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="password">Password</label>
-              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
               id="password" type="password" placeholder="******************"  name="password" required minLength='10' maxLength="20" />
-              <p className="text-xs italic text-red-500">Please choose a password.</p>
+              <p className="text-xs italic text-red-500">{error.password}</p>
             </div>
             <div className="mb-6">
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="password" >
                 Confirm Password
               </label>
-              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
               id="cpassword" type="password" placeholder="******************" name="cpassword" required minLength='10' maxLength="20"/>
-              <p className="text-xs italic text-red-500">Please choose a password.</p>
+              <p className="text-xs italic text-red-500">{error.cpassword}</p>
             </div>
             <div className="flex items-center justify-between">
               <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="submit">

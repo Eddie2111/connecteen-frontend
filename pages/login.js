@@ -1,25 +1,42 @@
 import Head from 'next/head'
 import Navbar2 from './components/Navbar2'
 import Link from 'next/link'
+import Router  from 'next/router'
 import backend from './api/backend'
-const Login = () => {
+import axios from '../node_modules/axios/index'
+import { useState } from 'react'
 
+
+const Login = () => {
+  const [error,setError] = useState('');
+  
   const onSubmit = async (event) => {
     event.preventDefault();
     const data = {
       email: event.target.email.value.toString(),
       password: event.target.password.value.toString(),
     };
-    const back = await fetch(backend+'signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+    const back = await axios.post(backend+'login', data)
+    .then((data) => {
+      console.log(data.data.result.username)
+      if(data.data.status === 'success' || data.data.result.isConfirmed === true){
+        localStorage.setItem('user',data.data.result.username)
+        localStorage.setItem('token',data.data.result.email)
+        //Router.push('/dashboard')
+        //console.log(data.data.result)
+        //const cookie = req.cookies();
+        
+      }
+      if(data.data.status === 'error'){
+        setError(data.data.error)
+      }
+      if (data.data.result.isConfirmed === false){
+        Router.push('/verify')
+      }
+
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
     .catch(err => console.log(err))
+    
 
   }
   return (
@@ -51,13 +68,13 @@ const Login = () => {
             <div className="mb-6">
 
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="password">Password</label>
-              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
+              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none border-black-500 focus:outline-none focus:shadow-outline" 
               id="password" type="password" placeholder="******************"  name="password" required minLength='10' maxLength="20" />
-              <p className="text-xs italic text-red-500">Please choose a password.</p>
+              <p className="text-xs italic text-red-500">{error}</p>
             </div>
 
             <div className="flex items-center justify-between">
-              <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline" type="submit">
+              <button className="px-4 py-2 font-bold text-white styleButton focus:outline-none focus:shadow-outline" type="submit">
                 Sign In
               </button>
               <Link className="inline-block text-sm font-bold text-blue-500 align-baseline hover:text-blue-800" href="#">

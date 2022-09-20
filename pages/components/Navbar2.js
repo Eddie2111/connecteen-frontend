@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 function Navbar2 () {
 
     return (
@@ -8,7 +9,7 @@ function Navbar2 () {
         
         <p className="flex items-center">
         
-        <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo"/>
+        <img src="/icon.png" layout='fill' className="h-6 mr-3 sm:h-9" alt="Flowbite Logo"/>
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> <Link href="/">Connecteen</Link></span>
         
         </p>

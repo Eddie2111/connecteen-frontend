@@ -5,11 +5,11 @@ function Banner(){
     color: "white",
   }
   const joinNow = {
-    marginTop:"-50px",
+    marginTop:"-60px",
   }
   return (
 
-    <nav className="flex flex-wrap items-center justify-between p-6 bg-blue-500">
+    <nav className="flex flex-wrap items-center justify-between p-4 bg-blue-500">
       <div className="flex items-center flex-shrink-0 mr-6 text-white">
         <span className="text-xl font-semibold tracking-tight">Connecteen</span>
       </div>

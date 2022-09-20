@@ -1,6 +1,50 @@
-.body{
+.body1{
     background: rgb(232,234,235);
     background: radial-gradient(circle, rgba(232,234,235,1) 0%, rgba(161,213,255,1) 72%, rgba(255,255,255,1) 100%);
+    
+}
+.body2{
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+}
+.body3{
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+}
+.headingH1{
+    font-family: 'Lobster', cursive;
+    font-size: 70px;
+    color: #fff;
+    text-align: left;
+    margin-top: 20px;
+}
+.styleButton{
+
+    background-image: linear-gradient(to right, #6292b0 0%, #2eafeb  51%, #4f748b  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    transition: 0.3s ease-in-out;    
+}
+.styleButton:hover{
+    transition: 0.3s ease-in-out;    
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+      
+}
+.bodyMerge{
+    background: rgb(240,243,244);
+    background: linear-gradient(180deg, rgba(240,243,244,1) 25%, rgba(255,255,255,1) 39%, rgba(68,168,207,1) 91%); 
+}
+.indexContainer{
+    width:80vw;
+    padding: auto;
+    margin: auto;
 }
 .card{
     background: rgb(28,28,28);
@@ -82,16 +126,80 @@
     justify-content: center;
     align-items: center;
 */
-.gridContainer{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    padding: 10px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.iconset{
+    color:rgb(71, 71, 71);
+    transition: 0.3s ease-in-out;
 }
-.gridContainer @media screen and (max-width: 600px){
-    grid-template-columns: auto auto;
+.iconset:hover{
+    color:rgb(38, 168, 238);
+    transition: 0.3s ease-in-out;
+}
+.flexbox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin:auto;
+    padding: auto;
+}
+.flexItem1{
+    width: 340px;
+    height: 200px;
+    margin-top: 100px;
+    padding: auto;
+    
+    
+    
+    justify-content: left;
+    align-items: left;
+}
+.flexItem2{
+    width: 340px;
+    height: 400px;
+    margin: auto;
+    padding: -5px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.verification{
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    padding:auto;
+    position: relative;
+    display: block;
+}
+@media only screen and (min-width: 600px) {
+
+    .flexbox{
+        padding: auto;
+        margin:auto;
+        display: flex;
+        margin-top:-50px;
+        flex-direction: row;
+        align-items: center;
+    }
+    .flexItem1{
+        width: 540px;
+        height: 500px;
+        margin-top: 150px;
+        padding: auto;
+        
+        
+        justify-content: left;
+        align-items: left;
+    }
+    .flexItem2{
+        width: 540px;
+        height: 500px;
+        margin: auto;
+        padding: auto;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+    }
 }
     

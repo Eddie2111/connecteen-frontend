@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { Button } from '@mui/material'
 import  Router  from 'next/router'
 import backend from './api/backend'
+import { useState } from 'react'
 
 const Verify = () => {
+  const [error,setError] = useState('');
     try{
     const sendBack = localStorage.getItem('isVerifyAllowed');
-    if (sendBack){
+    if (!sendBack){
         Router.push('/404')
         console.log("yes");
     }
@@ -36,7 +38,16 @@ catch(err){
       body: JSON.stringify(data),
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then((data) => {
+      if(data.status===400){
+      setError(data.message)
+      }
+      else{
+      localStorage.removeItem('isVerifyAllowed');
+      Router.push('/login')
+      }
+    }
+    )
     .catch(err => console.log(err))
 
   }
@@ -62,9 +73,9 @@ catch(err){
 
             <div className="mb-6">
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="password">Verification Code</label>
-              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline" 
-              id="password" type="password" placeholder="******************"  name="code" required minLength='4' maxLength="4" />
-              <p className="text-xs italic text-red-500">The given code is not what sent to you.</p>
+              <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none verification focus:outline-none focus:shadow-outline" 
+              id="password" type="password" placeholder="* * * *"  name="code" required minLength='4' maxLength="4" />
+              <p className="text-xs italic text-red-500">{error}</p>
             </div>
 
             <div className="flex items-center justify-between">
