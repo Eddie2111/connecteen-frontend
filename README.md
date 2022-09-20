@@ -16,6 +16,7 @@ This future platform will bring in all the advanced skilled teens into a single 
 - Login
 - Signup
 - Verification
+- Dashboard
 - Under construction
 
 # Stuff applied
@@ -24,26 +25,16 @@ This future platform will bring in all the advanced skilled teens into a single 
 - NodeJS backend
 - End to end validation
 - Loading animation
+- next/images for better responsiveness
+- loading animation
 
 # Stuff to be applied
+- Secure cookies
+- Proper navbar for dashboard
+- Proper sidebar for dashboard
+- framer-motion for better animatic design
+- Vector images for design purpose
 - Contact through provided Server Side API
 - YUP verification
-- next/images for better responsiveness
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
