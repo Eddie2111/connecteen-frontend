@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import Navbar2 from './components/Navbar2'
-import { useRouter } from 'next/router'
-import Banner from './components/Banner'
-//import Link from 'next/link'
-import { format } from 'url'
+import Head           from 'next/head'
+import Navbar2        from './components/Navbar2'
+import { useRouter }  from 'next/router'
+import Banner         from './components/Banner'
+import { format }     from 'url'
+import Image          from 'next/image'
 
-let counter = 0
+
+let counter = 0;
 export async function getServerSideProps() {
   counter++
   return { props: { initialPropsCounter: counter } }
@@ -34,31 +35,40 @@ export default function Home({  }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex flex-col items-center justify-center min-h-screen py-2 body">
-      <section className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
-        <h1 className="text-6xl font-bold" >
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            CONNECTEEN
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            Get started by joining the most advanced community of Banlgadesh
-          </code>
-        </p>
-
-
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 body2 ">
+      <section className='indexContainer'>
+          <div className="flexbox">
+              <div className="flexItem1">
+                  <h1 className="headingH1"> Connecteen </h1>
+                    <p className="p-3 font-mono text-lg  rounded-md">
+                      Get started by joining the most advanced community of Banlgadesh
+                    </p>
+              </div>
+              <div className="flexItem2">
+                  
+                  <Image src="/wallCard1.png" width="450" height="450" />
+              </div>
+          </div>
       </section>
       </div>
 
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 body3 ">
+      <section className='indexContainer'>
+          <div className="flexbox">
+              <div className="flexItem1">
+                  ekhane lekha pora thakbe
+              </div>
+              <div className="flexItem2">
+                  get some vector image here
+              </div>
+          </div>
+      </section>
+      </div>
       
 
       
 
-      <div className="flex flex-col items-center justify-center min-h-screen py-2 body">
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 body1">
       <section className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Welcome to{' '}
