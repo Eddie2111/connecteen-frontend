@@ -4,4 +4,11 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = 
+{
+  nextConfig,
+  env: {
+    backendTest: 'http://localhost:3200/',
+    backendDeploy: 'https://server42223.herokuapp.com/'
+  },
+}
