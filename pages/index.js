@@ -5,8 +5,13 @@ import Banner         from './components/Banner'
 import { format }     from 'url'
 import Image          from 'next/image'
 import { motion }     from "framer-motion"
+import CodeSnippet from './components/CodeSnippet'
 
 let counter = 0;
+const pStyle = {
+  margin:"auto",
+  padding:"auto"
+}
 export async function getServerSideProps() {
   counter++
   return { props: { initialPropsCounter: counter } }
@@ -34,17 +39,13 @@ export default function Home({  }) {
         <title>Connecteen | Welcome</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <motion.div
-    initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
-  />
+
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body2 ">
       <section className='indexContainer'>
           <div className="flexbox">
               <div className="flexItem1">
                   <h1 className="headingH1"> Connecteen </h1>
-                    <p className="p-3 font-mono text-lg  rounded-md">
+                    <p className="p-3 font-mono text-lg rounded-md">
                       Get started by joining the most advanced community of Banlgadesh
                     </p>
               </div>
@@ -57,20 +58,34 @@ export default function Home({  }) {
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body3 ">
-      <section className='indexContainer'>
+      <section className='indexContainer1'>
+
           <div className="flexbox">
-              <div className="flexItem1">
-                  ekhane lekha pora thakbe
+
+              <div className="flexItem3">
+                
+                <Image src="/aiPreview.png" width="550" height="380" />
               </div>
-              <div className="flexItem2">
-                  get some vector image here
+              <div className="flexItem4">
+                  <section className="cloud1">
+                    <p style={pStyle}>&nbsp;&nbsp;&nbsp;&nbsp;A simple code to voice to text</p>
+                  </section>
+                  <section className="cloud2">
+                 <CodeSnippet/>
+                  </section>
+                  <br/>
+                  <section className="cloud1">
+                    <p style={pStyle}>&nbsp;&nbsp;&nbsp;&nbsp;Easy to understand right?</p>
+                  </section>
+                  <br/>
+                  <section className="cloud3">
+                    <p style={pStyle}>&nbsp;&nbsp;&nbsp;&nbsp;Coding is not sourcery any more. Our advanced community and courses are here to help you out leap forward</p>
+                  </section>
               </div>
+
           </div>
       </section>
       </div>
-      
-
-      
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body1">
       <section className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
@@ -98,6 +113,44 @@ export default function Home({  }) {
 
 /*
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
+          <a href="https://nextjs.org/docs"className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
+            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
+            <p className="mt-4 text-xl">
+              Find in-depth information about Next.js features and its API.
+            </p>
+          </a>
+
+          <a
+            href="https://nextjs.org/learn"
+            className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+          >
+            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
+            <p className="mt-4 text-xl">
+              Learn about Next.js in an interactive course with quizzes!
+            </p>
+          </a>
+
+          <a
+            href="https://github.com/vercel/next.js/tree/canary/examples"
+            className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+          >
+            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
+            <p className="mt-4 text-xl">
+              Discover and deploy boilerplate example Next.js projects.
+            </p>
+          </a>
+
+          <a
+            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+          >
+            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
+            <p className="mt-4 text-xl">
+              Instantly deploy your Next.js site to a public URL with Vercel.
+            </p>
+          </a>
+        </div>
+                <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           <a href="https://nextjs.org/docs"className="p-6 mt-6 text-left border card w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
             <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
             <p className="mt-4 text-xl">

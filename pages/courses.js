@@ -177,7 +177,7 @@ const Courses = () => {
     {/* 👇️ iterate object VALUES */}
     {Object.values(courses).map((value, index) => {
       return (
-        <a className="p-6 mt-6 text-left border Course w-96 rounded-xl hover:text-blue-600 focus:text-blue-600" key={index}>
+        <a className="p-6 mt-6 text-left border Course w-96 rounded-xl hover:text-blue-600 focus:text-blue-600 cardCourse" key={index}>
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia component="img" height="140" image="" alt="green iguana"
             />
@@ -190,7 +190,7 @@ const Courses = () => {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Learn More</Button>
+              <a href={value.link}><Button size="small">Learn More</Button></a>
             </CardActions>
           </Card>
         </a>
