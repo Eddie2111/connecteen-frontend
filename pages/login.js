@@ -47,7 +47,7 @@ const Login = () => {
         <title>Connecteen | Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+<div style={{marginBottom:"30px"}}>&nbsp;</div>
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Join {' '}

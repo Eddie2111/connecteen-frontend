@@ -17,7 +17,7 @@ const CodeSnippet = ()=>{
 <code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(text)<br/></code>
 <code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(2)<br/></code>
 <code>  &nbsp;&nbsp;&nbsp;&nbsp;except:<br/></code>
-<code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Unable to recognize.')<br/></code>
+<code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Unable to recognize.")<br/></code>
 <code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(2)<br/></code>
 </code>
   )

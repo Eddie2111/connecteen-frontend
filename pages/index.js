@@ -31,17 +31,21 @@ export default function Home({  }) {
   }
   return (
     <>
+          <Head>
+            <title>Connecteen | Welcome</title>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
+
     <Banner/>
     <Navbar2/>
     
     
-      <Head>
-        <title>Connecteen | Welcome</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body2 ">
+
       <section className='indexContainer'>
+      
           <div className="flexbox">
               <div className="flexItem1">
                   <h1 className="headingH1"> Connecteen </h1>
@@ -64,7 +68,7 @@ export default function Home({  }) {
 
               <div className="flexItem3">
                 
-                <Image src="/aiPreview.png" width="550" height="380" />
+                <Image src="/aiPreview.png" width="650" height="440" />
               </div>
               <div className="flexItem4">
                   <section className="cloud1">
