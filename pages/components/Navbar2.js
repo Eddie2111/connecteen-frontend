@@ -9,7 +9,7 @@ function Navbar2 () {
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 100) {
-      setNavPull("-90px");
+      setNavPull("-140px");
       console.log("we recording this?")
     }
     if (offset < 100) {
@@ -38,7 +38,7 @@ function Navbar2 () {
     position:"fixed",
     width:"100vw",
     marginTop: navPull,
-    zIndex:"100",
+    zIndex:"30",
     transition:"0.5s",
   }
   const sidebar = {
@@ -47,7 +47,7 @@ function Navbar2 () {
     marginLeft:drawer,
     position:"fixed",
     display:"static",
-    zIndex: "1",
+    zIndex: "70",
     top: "0",
     left: "0",
     color:"white",

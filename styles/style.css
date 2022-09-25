@@ -78,9 +78,9 @@
     margin: auto;
 }
 .indexContainer1{
-    width:85vw;
+    width:80vw;
     padding: auto;
-    margin-left:-70px;
+    margin:auto;
 }
 .card{
     background: rgb(28,28,28);
@@ -189,7 +189,7 @@
     align-items: center;
 }
 .flexItem3{
-    width: 340px;
+    width: 380px;
     height: 400px;
     margin: auto;
     
@@ -199,9 +199,9 @@
 }
 
 .flexItem4{
-    width: 340px;
+    width: 280px;
     height: 550px;
-    margin-left:85px;
+    
     
     justify-content: right;
     align-items: right;
@@ -239,7 +239,7 @@
     border-radius: 5px;
     padding:5px;
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 40px;
     justify-content: center;
 }
 .cloud3{
@@ -250,7 +250,7 @@
     border-radius: 15px;
     padding:4px;
     margin-top: 20px;
-    margin-left: 110px;
+    margin-left: 40px;
     justify-content: center;
 }
 .HeadingContainer{
@@ -311,6 +311,22 @@
         
         justify-content: right;
         align-items: right;
+    }
+    .indexContainer1{
+        width:80vw;
+        padding: auto;
+        margin-left:150px;
+    }
+    .cloud3{
+        width:340px;
+        color:rgb(0, 0, 0);
+        font-size: 17px;
+        background-color: aliceblue;
+        border-radius: 15px;
+        padding:4px;
+        margin-top: 20px;
+        margin-left: 110px;
+        justify-content: center;
     }
 }
     
