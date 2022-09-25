@@ -1,4 +1,4 @@
-const backend = process.env.backendTest;
+//const backend = process.env.backendTest;
 /*
 import { serialize, CookieSerializeOptions } from 'cookie'
 import { NextApiResponse } from 'next' 
@@ -23,5 +23,5 @@ export const setCookie = (res, name, value, options) => {
 }
 */
 
-//const backend = "https://server42223.herokuapp.com/";
+const backend = "https://server42223.herokuapp.com/";
 export default backend;
