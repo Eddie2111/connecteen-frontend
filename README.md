@@ -27,6 +27,8 @@ This future platform will bring in all the advanced skilled teens into a single 
 - Loading animation
 - next/images for better responsiveness
 - loading animation
+- Proper navbar for homepage
+- Proper sidebar for homepage
 
 # Stuff to be applied
 - Secure cookies
