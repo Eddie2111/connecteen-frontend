@@ -29,13 +29,13 @@ This future platform will bring in all the advanced skilled teens into a single 
 - loading animation
 - Proper navbar for homepage
 - Proper sidebar for homepage
+- Proper navbar for dashboard
+- Proper sidebar for dashboard
+- Vector images for design purpose
 
 # Stuff to be applied
 - Secure cookies
-- Proper navbar for dashboard
-- Proper sidebar for dashboard
 - framer-motion for better animatic design
-- Vector images for design purpose
 - Contact through provided Server Side API
 - YUP verification
 
