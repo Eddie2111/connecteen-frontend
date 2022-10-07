@@ -32,11 +32,14 @@ This future platform will bring in all the advanced skilled teens into a single 
 - Proper navbar for dashboard
 - Proper sidebar for dashboard
 - Vector images for design purpose
+- Secure cookies
+- logout
+- Manual email validation
+- Contact through provided Server Side API
 
 # Stuff to be applied
-- Secure cookies
+- HTTPOnly Cookies
 - framer-motion for better animatic design
-- Contact through provided Server Side API
 - YUP verification
 
 
