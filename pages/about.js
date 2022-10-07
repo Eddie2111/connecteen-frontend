@@ -1,23 +1,33 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Navbar2 from './components/Navbar2'
+import Navbar3 from './components/Navbar3'
+
 const About = () => {
+  const headingH1 = {
+    fontSize: "4.0rem",
+    fontWeight: "light",
+    color: "black",
+    textAlign: "center",
+    margin: "1rem",
+    textShadow: "0px 0px 1px black"
+  }
   return (
     <>
-    <Navbar2/>
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 body">
       <Head>
-        <title>Connecteen | About</title>
+        <title> Connecteen || About</title>
+        <meta name="description" content="Global vision and introduction of Connecteen" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+      <Navbar3 />
+      <br/><br/><br/><br/>
       <div className="containerMod">
-        <img src="/underCons.webp" height="30%" width="30%" alt="404" />
-        <h1>The link you were looking for was not found</h1>
-        </div>
-      </main>
-
-    </div>
+        
+        <br/><br/><br/><br/>
+        <Image src="/heading.png" alt="About" width={450} height={100} className="image" />
+        <br/><br/><br/><br/>
+        <h1 className="heading-black-H2">Global vision and introduction of Connecteen</h1>
+        <Image src="/metaCover.png" alt="About" width={800} height={600} className="image" /> 
+      </div>
     </>
   )
 }

@@ -1,3 +1,10 @@
+.navStyle{
+    position:"fixed";
+    width:"100vw";
+    height:"100vh";
+    transition:"0.5s ease-in-out";
+}
+
 .body1{
     background: rgb(232,234,235);
     background: radial-gradient(circle, rgba(232,234,235,1) 0%, rgba(161,213,255,1) 72%, rgba(255,255,255,1) 100%);
@@ -11,7 +18,7 @@
 }
 .headingH1{
     font-family: 'Lobster', cursive;
-    font-size: 70px;
+    font-size: 65px;
     color: #fff;
     text-align: left;
     margin-top: 20px;
@@ -20,6 +27,13 @@
     font-family: 'Lobster', cursive;
     font-size: 35px;
     color: #fff;
+    text-align: left;
+    margin-top: 30px;
+}
+.heading-black-H2{
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    color: rgb(20, 20, 20);
     text-align: left;
     margin-top: 30px;
 }
@@ -189,7 +203,7 @@
     align-items: center;
 }
 .flexItem3{
-    width: 380px;
+    width: 340px;
     height: 400px;
     margin: auto;
     
@@ -232,7 +246,7 @@
     transition: 0.3s ease-in-out;
 }
 .cloud2{
-    width:340px;
+    min-width:280px;
     color:white;
     font-size: 13px;
     background-color: rgb(42, 42, 42);
@@ -243,7 +257,7 @@
     justify-content: center;
 }
 .cloud3{
-    width:340px;
+    min-width:280px;
     color:rgb(0, 0, 0);
     font-size: 17px;
     background-color: aliceblue;
@@ -261,8 +275,24 @@
     color:#fafafa;
     background-color: #000851;
 }
+.image-container {
+    width: 50%;
+    height:50%;
+    }
+.image {
+    object-fit: contain;
+}
+  
+  
+@media only screen and (max-width: 600px) {
+    .navStyle{
+        margin-top: -30px;
+    }
+}
 @media only screen and (min-width: 600px) {
-
+    .navStyle{
+        margin-top: -30px;
+    }
     .flexbox{
         padding: auto;
         margin:auto;

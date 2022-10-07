@@ -1,15 +1,16 @@
 import Head from 'next/head'
-import Navbar2 from './components/Navbar2'
+import Navbar3 from './components/Navbar3'
 import Link from 'next/link'
 import Router  from 'next/router'
 import backend from './api/backend'
 import axios from '../node_modules/axios/index'
 import { useState } from 'react'
+import Cookies from 'universal-cookie';
 
 
 const Login = () => {
   const [error,setError] = useState('');
-  
+  const cookie = new Cookies();
   const onSubmit = async (event) => {
     event.preventDefault();
     const data = {
@@ -21,8 +22,15 @@ const Login = () => {
       console.log(data.data.result.username)
       if(data.data.status === 'success' || data.data.result.isConfirmed === true){
         localStorage.setItem('user',data.data.result.username)
-        localStorage.setItem('token',data.data.result.email)
-        //Router.push('/dashboard')
+        
+        cookie.set('token',data.data.serialised.token, {
+          path: '/',
+          secure: true,
+          httpOnly: false,
+          sameSite: true,
+          maxAge: 3600*24*15,
+          });
+        Router.push('/dashboard')
         //console.log(data.data.result)
         //const cookie = req.cookies();
         
@@ -39,15 +47,19 @@ const Login = () => {
     
 
   }
+  if (cookie.get('token')){
+    Router.push('/dashboard')
+  }
+  else{
   return (
     <>
-    <Navbar2/>
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Connecteen | Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-<div style={{marginBottom:"30px"}}>&nbsp;</div>
+    <Navbar3/>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div style={{marginBottom:"60px"}}>&nbsp;</div>
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Join {' '}
@@ -104,6 +116,7 @@ const Login = () => {
     </div>
     </>
   )
+  }
 }
 
 export default (Login);

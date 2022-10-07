@@ -4,16 +4,18 @@ import { useState,useEffect } from "react";
 function Navbar2 () {
   const [drawer, setDrawer] = useState("100vw");
   const [display, setDisplay] = useState("0%");
-  const [cross, setCross] = useState("-5px");
+  const [cross, setCross] = useState("-25px");
   const [navPull, setNavPull] = useState("0px");
+  const [navSize, setNavSize] = useState("bg-white border-gray-200 px-5 sm:px-4 py-4 rounded dark:bg-gray-900");
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 100) {
-      setNavPull("-140px");
-      console.log("we recording this?")
+    if (offset > 60) {
+      setNavPull("-120px");
+      setNavSize("bg-white border-gray-200 px-12 sm:px-4 py-12 rounded dark:bg-gray-900");
     }
-    if (offset < 100) {
+    if (offset < 60) {
       setNavPull("0px");
+      setNavSize("bg-white border-gray-200 px-5 sm:px-4 py-4 rounded dark:bg-gray-900");
     }
   }
 
@@ -30,7 +32,7 @@ function Navbar2 () {
     if (drawer === "35vw" || display ==="65%") {
       setDrawer("100vw");
       setDisplay("0%");
-      setCross("-5px");
+      setCross("-25px");
     console.log("works");
     }
   }
@@ -43,7 +45,7 @@ function Navbar2 () {
   }
   const sidebar = {
     width: display,
-    height: "100vh",
+    height: "120vh",
     marginLeft:drawer,
     position:"fixed",
     display:"static",
@@ -54,9 +56,10 @@ function Navbar2 () {
     backgroundColor: "#111",
     transition:"0.5 ease-in-out"
   }
+  console.log(navSize);
     return (
   <>
-<nav className="bg-white border-gray-200 px-4 sm:px-4 py-5 rounded dark:bg-gray-900" style={navStyle}>
+<nav className={navSize} style={navStyle}>
 <div className="container flex flex-wrap items-center justify-between mx-auto">
         
         <p className="flex items-center">
@@ -98,14 +101,13 @@ function Navbar2 () {
   </nav>
   
   <div style={sidebar} id="mySidebar">
-  <p className="flex items-center">
-        
-        <img src="/icon.png" layout='fill' className="h-12 mr-0 mt-5 lg:h-12" style={{marginTop:"20px;"}}alt="Flowbite Logo"/>
+  <p className="flex items-center">        
+        <img src="/icon.png" layout='fill' className="h-12 mt-12 mr-0 lg:h-12" style={{marginTop:"20px"}}alt="Logo"/>
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white headingH2"> <Link href="/">onnecteen</Link></span>
-        
         </p>
   
-    <button onClick={onDraw} style={{float:"right",marginRight:cross,fontSize:"35px",marginTop:"-45px"}}> X </button>
+    <button onClick={onDraw} style={{float:"right",marginRight:cross,fontSize:"35px",marginTop:"-65px"}}> X </button>
+    
     <ul>
       <br/><br/>
   <li className="sidebarItems"><Link href="/"> Home </Link></li>
@@ -116,7 +118,7 @@ function Navbar2 () {
   <li className="sidebarItems"><Link href="/signup"> Sign up </Link></li>
   </ul>
   </div>
-  <br/><br/>
+  
   </>
     )
   }

@@ -1,9 +1,11 @@
 
 import { useState } from "react";
+import Cookies from 'universal-cookie';
 export default function Test(props) {
   const [image, setImage] = useState(null);
   const [createObjectURL, setCreateObjectURL] = useState(null);
   const [drawer, setDrawer] = useState("20px");
+  const cookies = new Cookies();
   const uploadToClient = (event) => {
     if (event.target.files && event.target.files[0]) {
       const i = event.target.files[0];
@@ -12,7 +14,20 @@ export default function Test(props) {
       setCreateObjectURL(URL.createObjectURL(i));
     }
   };
-
+  const cookie = () => {
+    try{
+    cookies.set('myCat', 'Pacman', { 
+      path: '/',
+      secure: true,
+      httpOnly: true,
+      sameSite: 'strict',
+    });
+    console.log(cookie.get('myCat'));
+  }
+  catch(e){
+    console.log(e)
+  }
+  };
   const uploadToServer = async (event) => {
     const body = new FormData();
     body.append("file", image);
@@ -25,6 +40,7 @@ export default function Test(props) {
     if (drawer === "20px") {
       setDrawer("200px");
     console.log("works");
+    
     }
     if (drawer === "200px") {
       setDrawer("20px");
@@ -42,6 +58,7 @@ export default function Test(props) {
       <button className="styleButton" onClick={works}></button>
       <div style={styled}> xox</div>
       <div>
+        <button onClick={cookie}>cookie!!</button>
         <img src={createObjectURL} />
         <h4>Select Image</h4>
         <input type="file" name="myImage" onChange={uploadToClient} />

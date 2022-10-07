@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar2 from './components/Navbar2'
+import Navbar3 from './components/Navbar3'
 import Link from 'next/link'
 import { Button } from '@mui/material'
 import  Router  from 'next/router'
@@ -53,13 +53,14 @@ catch(err){
   }
   return (
     <>
-    <Navbar2 />
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+
       <Head>
         <title>Connecteen | Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar3 />
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Join {' '}

@@ -5,8 +5,8 @@ import Banner         from './components/Banner'
 import { format }     from 'url'
 import Image          from 'next/image'
 import { motion }     from "framer-motion"
-import CodeSnippet from './components/CodeSnippet'
-
+import CodeSnippet    from './components/CodeSnippet'
+import SEO            from './components/SEO'
 let counter = 0;
 const pStyle = {
   margin:"auto",
@@ -22,6 +22,7 @@ export default function Home({  }) {
   const reload = () => {
     router.push(format({ pathname, query }))
   }
+  const data = process.env.backend;
 
   const incrementCounter = () => {
     const currentCounter = query.counter ? parseInt(query.counter) : 0
@@ -34,6 +35,10 @@ export default function Home({  }) {
           <Head>
             <title>Connecteen | Welcome</title>
             <link rel="icon" href="/favicon.ico" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta name="description" content="Connecteen is a educational community platform for teens." />
+            <SEO />
+            
         </Head>
 
     <Banner/>
@@ -43,19 +48,19 @@ export default function Home({  }) {
 
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body2 ">
-
-      <section className='indexContainer'>
       
+      <section className='indexContainer'>
+      <br/><br/>
           <div className="flexbox">
               <div className="flexItem1">
-                  <h1 className="headingH1"> Connecteen </h1>
+                  <h1 className="headingH1"> Connecteen {data}</h1>
                     <p className="p-3 font-mono text-lg rounded-md">
                       Get started by joining the most advanced community of Banlgadesh
                     </p>
               </div>
               <div className="flexItem2">
                   
-                  <Image src="/wallCard1.png" width="450" height="450" />
+                  <Image src="/wallCard1.png" className="image" width="450" height="450"  />
               </div>
           </div>
       </section>
@@ -68,7 +73,7 @@ export default function Home({  }) {
 
               <div className="flexItem3">
                 
-                <Image src="/aiPreview.png" width="650" height="440" />
+                <Image src="/aiPreview.png" width="450" height="350" />
               </div>
               <div className="flexItem4">
                   <section className="cloud1">

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import  Router  from 'next/router'
 import backend from './api/backend'
-import Navbar2 from './components/Navbar2'
+import Navbar3 from './components/Navbar3'
 import validatorSignup from './api/validator/signup'
 import { useState } from 'react'
 
@@ -83,10 +83,10 @@ const Signup = () => {
         <title>Connecteen | Signup </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Navbar2/>
-    <br/><br/>
+    <Navbar3/>
+    
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-
+    <div style={{marginBottom:"60px"}}>&nbsp;</div>
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
         <h1 className="text-6xl font-bold" >
           Join {' '}

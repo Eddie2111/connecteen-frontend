@@ -1,28 +1,40 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Navbar2 from './components/Navbar2'
+import Navbar3 from './components/Navbar3'
+import Router from 'next/router'
+import Cookie from 'universal-cookie';
+
 
 const Community = () => {
+  const cookie = new Cookie();
+  const check = ()=>{
+  if (cookie.get('token')){
+    Router.push("/dashboard"); 
+  }
+}
+check();
   return (
     <>
-    <Navbar2/>
+    <Navbar3/>
     
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    
       <Head>
         <title>Connecteen | Community</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <br/><br/>
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
       <div className="containerMod">
-        <img src="/underCons.webp" height="50%" width="50%" alt="404" />
+        <Image src="/underCons.webp" height="500px" width="500px" alt="404" />
         <h1>The link you were looking for was not found</h1>
         </div>
       </main>
 
-    </div>
+    
     </>
   )
-}
+  }
+
+
 
 export default (Community);

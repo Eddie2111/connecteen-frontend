@@ -6,6 +6,7 @@ module.exports = {
   ],
   
   theme: {
+    darkMode: false, // or 'media' or 'class'
     extend: {
       gridColumn: {
         'span-2': 'span 2 / span 2',

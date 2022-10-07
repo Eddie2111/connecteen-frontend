@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Navbar2 from './components/Navbar2'
+import Navbar3 from './components/Navbar3'
 
 
 import { useRouter } from 'next/router'
@@ -20,7 +20,7 @@ export default function Contact({ }) {
 
   return (
     <>
-    <Navbar2/>
+    <Navbar3/>
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Connecteen | Contact</title>

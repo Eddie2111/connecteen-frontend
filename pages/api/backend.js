@@ -21,7 +21,9 @@ export const setCookie = (res, name, value, options) => {
   }
   res.setHeader('Set-Cookie', serialize(name, String(stringValue), options))
 }
-*/
 
-const backend = "https://server42223.herokuapp.com/";
+*/
+//const backend = "https://server42223.herokuapp.com/";
+//const backend = "http://localhost:3200/";
+const backend = process.env.backendTest;
 export default backend;
