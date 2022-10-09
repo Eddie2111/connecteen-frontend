@@ -23,7 +23,7 @@ export const setCookie = (res, name, value, options) => {
 }
 
 */
-//const backend = "https://server42223.herokuapp.com/";
+const backend = "https://server42223.herokuapp.com/";
 //const backend = "http://localhost:3200/";
-const backend = process.env.backendTest;
+//const backend = process.env.backendTest;
 export default backend;
