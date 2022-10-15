@@ -27,13 +27,13 @@ function Navbar2 () {
       setDrawer("35vw");
       setDisplay("65%");
       setCross("15px");
-    console.log("works");
+    
     }
     if (drawer === "35vw" || display ==="65%") {
       setDrawer("100vw");
       setDisplay("0%");
       setCross("-25px");
-    console.log("works");
+    
     }
   }
   const navStyle = {
@@ -56,7 +56,7 @@ function Navbar2 () {
     backgroundColor: "#111",
     transition:"0.5 ease-in-out"
   }
-  console.log(navSize);
+  
     return (
   <>
 <nav className={navSize} style={navStyle}>

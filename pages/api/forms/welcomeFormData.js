@@ -14,6 +14,6 @@ const welcomeFormData = (data) => {
     jobTitle:data.jobTitle,
     others:data.others
   }
-  return axios.post(backend+"/forms/welcomeFormData", formData);
+  return axios.post(backend+"/forms/welcomeForm", formData);
 }
 

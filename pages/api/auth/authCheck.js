@@ -2,17 +2,20 @@ import axios from "axios"
 import backend from '../backend'
 
 const api = async (token,page)=>{
-  const back = await axios.post(backend+page, data)
+  const data = {
+    token:token,
+  }
+  const back = await axios.post(backend+page, token)
   .then((data) => {
     if(data.message === 'success'){
-      return data
+      return data.data
     }
     else{
-      return data
+      return data.data
     }
   })
   .catch(err => console.log(err))
   return back;
                 
 }
-export default api
+export default api;

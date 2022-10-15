@@ -104,6 +104,9 @@
     color:aliceblue;
     transition: 0.5s ease-in-out !important;
 }
+.inputText{
+    color: black !important;
+}
 
 .card:hover{
     background: rgb(82,182,217);
