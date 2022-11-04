@@ -2,6 +2,7 @@ import Head from 'next/head'
 //import Link from 'next/link'
 import Navbar3 from './components/Navbar3'
 import * as React from 'react';
+import { motion } from 'framer-motion';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -28,10 +29,13 @@ const Courses = () => {
           We offer advanced courses in {' '}
         </h1>
 
-
+        <motion.div
+                initial={{opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}>
         <div className="flex flex-wrap items-center justify-around mt-8 max-w-8xl sm:w-full">
         
-        
+
       
     {/* 👇️ iterate object VALUES */}
     {Object.values(courses).map((value, index) => {
@@ -55,7 +59,9 @@ const Courses = () => {
         </section>
       )
     })}
+    
     </div>
+    </motion.div>
       </main>
 
     </div>

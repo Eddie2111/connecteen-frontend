@@ -5,6 +5,7 @@ import Navbar3 from './components/Navbar3'
 
 import { useRouter } from 'next/router'
 import { format } from 'url'
+import SEO from './components/SEO'
 
 let counter = 0
 export async function getServerSideProps() {
@@ -24,7 +25,7 @@ export default function Contact({ }) {
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Connecteen | Contact</title>
-        <link rel="icon" href="/favicon.ico" />
+        <SEO/>
       </Head>
 
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">

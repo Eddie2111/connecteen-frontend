@@ -1,5 +1,5 @@
 import Head           from 'next/head'
-import Navbar2        from './components/Navbar2'
+import Navbar3        from './components/Navbar3'
 import { useRouter }  from 'next/router'
 import Banner         from './components/Banner'
 import { format }     from 'url'
@@ -7,6 +7,7 @@ import Image          from 'next/image'
 import { motion }     from "framer-motion"
 import CodeSnippet    from './components/CodeSnippet'
 import SEO            from './components/SEO'
+import Link           from 'next/link'    
 let counter = 0;
 const pStyle = {
   margin:"auto",
@@ -41,8 +42,8 @@ export default function Home({  }) {
             
         </Head>
 
-    <Banner/>
-    <Navbar2/>
+    
+    <Navbar3/>
     
     
 
@@ -52,36 +53,58 @@ export default function Home({  }) {
       <section className='indexContainer'>
       <br/><br/>
           <div className="flexbox">
+          <motion.div
+                initial={{ y:300 ,opacity: 0 }}
+                animate={{ y:0, opacity: 1 }}
+                transition={{ duration: 1 }}>
               <div className="flexItem1">
                   <h1 className="headingH1"> Connecteen {data}</h1>
                     <p className="p-3 font-mono text-lg rounded-md">
-                      Get started by joining the most advanced community of Banlgadesh
+                      Get started by joining the most advanced community of Bangladesh
                     </p>
+                    <Link href="/login">Get Started</Link>
               </div>
+              
+            </motion.div>
               <div className="flexItem2">
-                  
+              <motion.div
+                initial={{ x:300 ,opacity: 0 }}
+                animate={{ x:0, opacity: 1 }}
+                transition={{ duration: 1 }}>
                   <Image src="/wallCard1.png" className="image" width="450" height="450"  />
+                </motion.div>
               </div>
           </div>
       </section>
+      
       </div>
+      
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body3 ">
       <section className='indexContainer1'>
 
           <div className="flexbox">
-
-              <div className="flexItem3">
-                
+                <motion.div
+                    initial={{ x:-400 ,opacity: 0.5 }}
+                    transition={{ duration: 1.5 }}
+                    whileInView={{ x:0, opacity: 1 }}>
+              <div className="flexItem3">  
                 <Image src="/aiPreview.png" width="450" height="350" />
               </div>
+              </motion.div>
+              
               <div className="flexItem4">
                   <section className="cloud1">
                     <p style={pStyle}>&nbsp;&nbsp;&nbsp;&nbsp;A simple code to voice to text</p>
                   </section>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                    whileInView={{ opacity: 1 }}>
                   <section className="cloud2">
                  <CodeSnippet/>
                   </section>
+                    </motion.div>
                   <br/>
                   <section className="cloud1">
                     <p style={pStyle}>&nbsp;&nbsp;&nbsp;&nbsp;Easy to understand right?</p>
@@ -98,17 +121,30 @@ export default function Home({  }) {
 
       <div className="flex flex-col items-center justify-center min-h-screen py-2 body1">
       <section className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+        <motion.div
+                initial={{ y:-150 ,opacity: 0 }}
+                whileInView={{ y:0, opacity: 1 }}
+                transition={{ duration: 1 }}>
         <h1 className="text-6xl font-bold" >
           Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
+          </h1>
+          </motion.div>
+            <motion.div
+                initial={{opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1.8 }}>
+        <h1>
+            <br/>
+          <a className="text-blue-600 text-6xl font-bold" href="https://nextjs.org">
             CONNECTEEN
           </a>
         </h1>
+        </motion.div>
 
         <p className="mt-3 text-2xl">
           
           <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            Get started by joining the most advanced community of Banlgadesh
+            Get started by joining the most advanced community of Bangladesh
           </code>
         </p>
 

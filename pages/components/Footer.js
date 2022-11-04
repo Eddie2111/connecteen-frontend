@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Footer = () =>{
@@ -59,7 +60,12 @@ return (
   <div className="grid gap-8 grid-1 md:grid-cols-2 lg:grid-cols-4">
     <div className="">
       <h6 className="flex items-center justify-center mb-4 font-semibold uppercase md:justify-start">
+      <motion.div
+                initial={{ y:-100 ,opacity: 0 }}
+                whileInView={{ y:0, opacity: 1 }}
+                transition={{ duration: 1 }}>
       <Image src="/icon.png" alt="Icon" width="50" height="50" />
+        </motion.div>
         &nbsp;&nbsp;&nbsp;
         Connecteen Community
       </h6>

@@ -31,9 +31,13 @@ export default function Test(props) {
   const uploadToServer = async (event) => {
     const body = new FormData();
     body.append("file", image);
-    const response = await fetch("/api/file", {
+    const response = await fetch("http://localhost:3200/image", {
       method: "POST",
-      body
+      contentType: "multipart/form-data",
+      body,
+      withCredentials: true,
+      secure: true,
+      sameSite: 'strict',
     });
   };
   const works = ()=>{
@@ -59,7 +63,7 @@ export default function Test(props) {
       <div style={styled}> xox</div>
       <div>
         <button onClick={cookie}>cookie!!</button>
-        <img src={createObjectURL} />
+        <img src={createObjectURL} height="300px" width="300px"/>
         <h4>Select Image</h4>
         <input type="file" name="myImage" onChange={uploadToClient} />
         <button

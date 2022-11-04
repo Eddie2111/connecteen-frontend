@@ -5,6 +5,7 @@ import backend from './api/backend'
 import Navbar3 from './components/Navbar3'
 import validatorSignup from './api/validator/signup'
 import { useState } from 'react'
+import {motion} from 'framer-motion'
 
 const Signup = () => {
   const [error, setError] = useState({
@@ -86,8 +87,14 @@ const Signup = () => {
     <Navbar3/>
     
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
+
+
     <div style={{marginBottom:"60px"}}>&nbsp;</div>
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+      <motion.div 
+            initial={{y:300,opacity: 0}}
+            animate={{y:0,opacity: 1}}
+            transition={{delay: 0.5}}>
         <h1 className="text-6xl font-bold" >
           Join {' '}
           <p className="text-blue-600"> Connecteen </p> Today
@@ -98,8 +105,14 @@ const Signup = () => {
             Get started by joining the most advanced community of Banlgadesh
           </code>
         </p>
+        </motion.div>
 
         <div className="flex items-center justify-around max-w-4xl mt-6 sm:w-full">
+
+        <motion.div 
+            initial={{opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}>
 
         <div className="w-full max-w-xs">
           <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md cardSignup" onSubmit={onSubmit}>
@@ -108,7 +121,7 @@ const Signup = () => {
                 Full Name
               </label>
               <input className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
-              id="username" type="text" placeholder="John Doe"  name="name" required minLength='3' maxLength="35"/>
+               type="text" placeholder="John Doe"  name="name" required minLength='3' maxLength="35"/>
               <p className="text-xs italic text-red-500">{error.name}</p>
             </div>
             <div className="mb-4">
@@ -116,14 +129,14 @@ const Signup = () => {
                 Email
               </label>
               <input className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
-              id="username" type="text" placeholder="john@example.com"  name="email" required minLength='10' maxLength="40"/>
+               type="text" placeholder="john@example.com"  name="email" required minLength='10' maxLength="40"/>
               <p className="text-xs italic text-red-500">{error.email}</p>
             </div>
             <div className="mb-6">
 
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="password">Password</label>
               <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
-              id="password" type="password" placeholder="******************"  name="password" required minLength='10' maxLength="20" />
+               type="password" placeholder="******************"  name="password" required minLength='10' maxLength="20" />
               <p className="text-xs italic text-red-500">{error.password}</p>
             </div>
             <div className="mb-6">
@@ -131,7 +144,7 @@ const Signup = () => {
                 Confirm Password
               </label>
               <input className="w-full px-3 py-2 mb-3 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline ${errorcolor}" 
-              id="cpassword" type="password" placeholder="******************" name="cpassword" required minLength='10' maxLength="20"/>
+               type="password" placeholder="******************" name="cpassword" required minLength='10' maxLength="20"/>
               <p className="text-xs italic text-red-500">{error.cpassword}</p>
             </div>
             <div className="flex items-center justify-between">
@@ -151,7 +164,7 @@ const Signup = () => {
             &copy;2022 Connecteen. All rights reserved.
           </p>
         </div>
-
+        </motion.div>
 
         </div>
       </main>
