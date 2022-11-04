@@ -44,7 +44,7 @@ const districts = ["Dhaka","Chittagong","Barishal","Khulna","Sylhet","Rajshahi",
       <NavbarLoggedIn />
 
             <h1 className="text-center">Welcome</h1>
-              <h1 className="text-center">Let's prepare your profile</h1>
+              <h1 className="text-center">Lets prepare your profile</h1>
               <div className="flex flex-col items-center justify-center min-h-screen px-12 py-4">
 
 

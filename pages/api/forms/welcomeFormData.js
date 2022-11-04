@@ -16,4 +16,5 @@ const welcomeFormData = (data) => {
   }
   return axios.post(backend+"/forms/welcomeForm", formData);
 }
+export default welcomeFormData;
 

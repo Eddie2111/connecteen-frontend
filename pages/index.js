@@ -102,7 +102,16 @@ export default function Home({  }) {
                     transition={{ duration: 1 }}
                     whileInView={{ opacity: 1 }}>
                   <section className="cloud2">
-                 <CodeSnippet/>
+                 
+
+
+
+
+  <CodeSnippet/>
+
+
+
+
                   </section>
                     </motion.div>
                   <br/>

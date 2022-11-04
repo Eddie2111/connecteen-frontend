@@ -1,10 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
-  
-}
-
-module.exports ={  
     reactStrictMode: true,
     swcMinify: true,
     env: {
@@ -12,9 +7,10 @@ module.exports ={
         backendDeploy: 'https://server42223.herokuapp.com/',
         aboutPage: "production",
         contactPage: "production",
-    }
+      }
 }
 
+module.exports =nextConfig;
 
 /*
   env: {
