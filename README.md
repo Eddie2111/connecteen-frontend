@@ -35,8 +35,8 @@ This future platform will bring in all the advanced skilled teens into a single 
 - logout
 - Manual email validation
 - Contact through provided Server Side API
+- framer-motion for better animatic design
 
 # Stuff to be applied
 - HTTPOnly Cookies
-- framer-motion for better animatic design
 - YUP verification
