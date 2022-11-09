@@ -36,6 +36,8 @@ This future platform will bring in all the advanced skilled teens into a single 
 - Manual email validation
 - Contact through provided Server Side API
 - framer-motion for better animatic design
+- Localstorage + httponly cookies 
+- Location tracking on login and signup
 
 # Stuff to be applied
 - HTTPOnly Cookies
