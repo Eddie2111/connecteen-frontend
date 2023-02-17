@@ -5,6 +5,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   
+  
   theme: {
     darkMode: false, // or 'media' or 'class'
     extend: {
@@ -15,4 +16,3 @@ module.exports = {
   },
   plugins: [],
 }
-
