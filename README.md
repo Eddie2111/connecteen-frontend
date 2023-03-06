@@ -2,13 +2,13 @@
 
 This future platform will bring in all the advanced skilled teens into a single community.
 
-## Will be deployed on vercel + heroku
+## Will be deployed on vercel + Render+Cyclic / AWS EC2
 
 - Node deployed on Heroku
  → https://server42223.herokuapp.com
 - SSR on development on Vercel
  → https://connecteen-frontend-eddie2111.vercel.app/
- →
+ 
 # Pages completed
 - Home
 - Courses
