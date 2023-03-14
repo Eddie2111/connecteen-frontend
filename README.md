@@ -14,7 +14,6 @@ This future platform will bring in all the advanced skilled teens into a single 
  
  
  
- 
 # Pages completed
 - Home
 - Courses
