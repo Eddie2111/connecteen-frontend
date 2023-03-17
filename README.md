@@ -9,8 +9,7 @@ This future platform will bring in all the advanced skilled teens into a single 
 - SSR on development on Vercel
  → https://connecteen-frontend-eddie2111.vercel.app/
  
- 
- 
+
  
  
  
