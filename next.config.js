@@ -12,6 +12,8 @@ const nextConfig = {
 
 module.exports =nextConfig;
 
+
+
 /*
   env: {
     backendTest: 'http://localhost:3200/',
