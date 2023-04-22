@@ -3,7 +3,7 @@
 This future platform will bring in all the advanced skilled teens into a single community.
 
 ## Will be deployed on vercel + Render+Cyclic / AWS EC2
-
+### /// I don't know why I have stopped working on this \\\ ###
 - Node deployed on Heroku
  → https://server42223.herokuapp.com
 - SSR on development on Vercel
